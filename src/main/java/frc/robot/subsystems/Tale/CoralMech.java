@@ -46,8 +46,7 @@ public class CoralMech extends SubsystemBase {
   /** Creates a new Arm Subsystem. */
   public CoralMech() {
     // Initialize motor controller
-    CANBus canbus = new CANBus(m_canBus);
-    motor = new TalonFXS(m_canId, canbus);
+    motor = new TalonFXS(m_canId, new CANBus(m_canBus));
 
     // Configure motor
     TalonFXSConfiguration config = new TalonFXSConfiguration();

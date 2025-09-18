@@ -60,8 +60,7 @@ public class AlgaeMech extends SubsystemBase {
   /** Creates a new Arm Subsystem. */
   public AlgaeMech() {
     // Initialize motor controller
-    CANBus canbus = new CANBus(m_canBus);
-    m_motor = new TalonFXS(m_canId, (canbus));
+    m_motor = new TalonFXS(m_canId, (new CANBus(m_canBus)));
     // Digital input getter
 
     TalonFXSConfiguration config = new TalonFXSConfiguration();
